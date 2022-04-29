@@ -16,6 +16,7 @@ class SignalType(Enum):
     DIRECCION_PROHIBIDA = 4
     CEDA_EL_PASO = 5
     DIRECCION_OBLIGATORIA = 6
+    OTRA = 7
 
 
 class Image:
@@ -38,6 +39,8 @@ class Image:
             self.signal_type = SignalType.CEDA_EL_PASO
         elif type in direccion_obligatoria:
             self.signal_type = SignalType.DIRECCION_OBLIGATORIA
+        else:
+            self.signal_type = SignalType.OTRA
 
     def display_img(self):
         pyplot.imshow(self.image)
